@@ -1,0 +1,92 @@
+# This is a sample build configuration for JavaScript.
+# Check our guides at https://confluence.atlassian.com/x/14UWN for more examples.
+# Only use spaces to indent your .yml configuration.
+# -----
+# You can specify a custom docker image from Docker Hub as your build environment.
+image: node:14.7.0
+pipelines:
+  branches:
+    development:
+      - step:
+          name: Install Dependencies
+          caches:
+            - node
+          script:
+            - yarn install
+      - step:
+          name: Clean Code
+          caches:
+            - node
+          script:
+            - git submodule update --init --recursive
+            - yarn clean
+      - step:
+          name: Build
+          deployment: development
+          caches:
+            - node
+          script:
+            - git submodule update --init --recursive
+            - chmod 777 ./base.sh
+            - sed -i "s/PROJECT/${PROJECT}/g" ./base.sh
+            - sed -i "s/%ENV/development/g" ./base.sh
+            - chmod 777 ./base.sh
+            - sed -i "s/PROJECT/${PROJECT}/g" ./package.json
+            - sed -i "s/.env.production/.env.development/g" ./package.json
+            - sed -i "s/NODE_ENV=production tsc/NODE_ENV=development tsc/g" ./package.json
+            - sed -i "s/NODE_ENV=production babel/NODE_ENV=development babel/g" ./package.json
+            - yarn super:build
+            - pipe: atlassian/sftp-deploy:0.5.5
+              variables:
+                USER: $USER
+                SERVER: "$SERVER"
+                REMOTE_PATH: /home/$PROJECT/
+                LOCAL_PATH: "dist/*"
+                DEBUG: "true"
+                EXTRA_ARGS: "-i cert/$USER.pem"
+          after-script:
+            - ls -alhr
+            - cd cert/
+            - chmod 400 node_kpmg.pem
+            - ssh -i node_kpmg.pem node_kpmg@$SERVER /home/kpmgapi/base.sh
+    production:
+      - step:
+          name: Install Dependencies
+          caches:
+            - node
+          script:
+            - yarn install
+      - step:
+          name: Clean Code
+          caches:
+            - node
+          script:
+            - git submodule update --init --recursive
+            - yarn clean
+      - step:
+          name: Build
+          deployment: production
+          caches:
+            - node
+          script:
+            - git submodule update --init --recursive
+            - chmod 777 ./base.sh
+            - sed -i "s/PROJECT/${PROJECT}/g" ./base.sh
+            - sed -i "s/%ENV/production/g" ./base.sh
+            - chmod 777 ./base.sh
+            - sed -i "s/PROJECT/${PROJECT}/g" ./package.json
+            - yarn install
+            - yarn super:build
+            - pipe: atlassian/sftp-deploy:0.5.5
+              variables:
+                USER: $USER
+                SERVER: "$SERVER"
+                REMOTE_PATH: /home/$PROJECT/
+                LOCAL_PATH: "dist/*"
+                DEBUG: "true"
+                EXTRA_ARGS: "-i cert/$PEM.pem"
+          after-script:
+            - ls -alhr
+            - cd cert/
+            - chmod 400 $PEM.pem
+            - ssh -i $PEM.pem $USER@$SERVER /home/$PROJECT/base.sh

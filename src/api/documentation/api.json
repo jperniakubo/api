@@ -1,0 +1,353 @@
+{
+  "swagger": "2.0",
+  "paths": {
+    "/kg/generate-access-token": {
+      "get": {
+        "tags": ["kg"],
+        "description": "Generate Services - KG - GET",
+        "produces": ["application/json"]
+      }
+    },
+    "/onboarding/signup": {
+      "post": {
+        "tags": ["onboarding"],
+        "description": "Generate Services - ONBOARDING - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/onboarding/login": {
+      "post": {
+        "tags": ["onboarding"],
+        "description": "Generate Services - ONBOARDING - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/onboarding/confirm-email/:uid": {
+      "get": {
+        "tags": ["onboarding"],
+        "description": "Generate Services - ONBOARDING - GET",
+        "produces": ["application/json"]
+      }
+    },
+    "/onboarding/recovery-password": {
+      "post": {
+        "tags": ["onboarding"],
+        "description": "Generate Services - ONBOARDING - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/onboarding/check-code": {
+      "post": {
+        "tags": ["onboarding"],
+        "description": "Generate Services - ONBOARDING - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/onboarding/change-password": {
+      "post": {
+        "tags": ["onboarding"],
+        "description": "Generate Services - ONBOARDING - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/onboarding/profile": {
+      "get": {
+        "tags": ["onboarding"],
+        "description": "Generate Services - ONBOARDING - GET",
+        "produces": ["application/json"]
+      }
+    },
+    "/cat": {
+      "get": {
+        "tags": ["cat"],
+        "description": "Generate Services - CAT - GET",
+        "produces": ["application/json"]
+      },
+      "post": {
+        "tags": ["cat"],
+        "description": "Generate Services - CAT - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/cat/:filter/:limit/:offset": {
+      "get": {
+        "tags": ["cat"],
+        "description": "Generate Services - CAT - GET",
+        "produces": ["application/json"]
+      }
+    },
+    "/cat/:id": {
+      "get": {
+        "tags": ["cat"],
+        "description": "Generate Services - CAT - GET",
+        "produces": ["application/json"]
+      },
+      "put": {
+        "tags": ["cat"],
+        "description": "Generate Services - CAT - PUT",
+        "produces": ["application/json"]
+      },
+      "delete": {
+        "tags": ["cat"],
+        "description": "Generate Services - CAT - DELETE",
+        "produces": ["application/json"]
+      }
+    },
+    "/cat/deactivate/:id": {
+      "put": {
+        "tags": ["cat"],
+        "description": "Generate Services - CAT - PUT",
+        "produces": ["application/json"]
+      }
+    },
+    "/city": {
+      "post": {
+        "tags": ["city"],
+        "description": "Generate Services - CITY - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/building/getBuildingsByCity": {
+      "post": {
+        "tags": ["building"],
+        "description": "Generate Services - BUILDING - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/building/findBuilding": {
+      "post": {
+        "tags": ["building"],
+        "description": "Generate Services - BUILDING - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/building/getFloorsByBuilding": {
+      "post": {
+        "tags": ["building"],
+        "description": "Generate Services - BUILDING - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/officeType/getAll": {
+      "post": {
+        "tags": ["officeType"],
+        "description": "Generate Services - OFFICETYPE - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/helpCenter/getAllQuestions": {
+      "post": {
+        "tags": ["helpCenter"],
+        "description": "Generate Services - HELPCENTER - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/helpCenter/generateSupportTicket": {
+      "post": {
+        "tags": ["helpCenter"],
+        "description": "Generate Services - HELPCENTER - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/phoneServiceNumber/getAll": {
+      "post": {
+        "tags": ["phoneServiceNumber"],
+        "description": "Generate Services - PHONESERVICENUMBER - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/office/getListOfOfficeByFloor": {
+      "post": {
+        "tags": ["office"],
+        "description": "Generate Services - OFFICE - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/office/getOfficeInfo": {
+      "post": {
+        "tags": ["office"],
+        "description": "Generate Services - OFFICE - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/office/getFavoritesOfficesOfUser": {
+      "post": {
+        "tags": ["office"],
+        "description": "Generate Services - OFFICE - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/office/addOfficeToFavorites": {
+      "post": {
+        "tags": ["office"],
+        "description": "Generate Services - OFFICE - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/office/reservationOffice": {
+      "post": {
+        "tags": ["office"],
+        "description": "Generate Services - OFFICE - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/office/listUserReservations": {
+      "post": {
+        "tags": ["office"],
+        "description": "Generate Services - OFFICE - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/office/getReservationInfo": {
+      "post": {
+        "tags": ["office"],
+        "description": "Generate Services - OFFICE - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/office/cancelReservation": {
+      "post": {
+        "tags": ["office"],
+        "description": "Generate Services - OFFICE - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/office/updateReservation": {
+      "post": {
+        "tags": ["office"],
+        "description": "Generate Services - OFFICE - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/office/checkQrOffice": {
+      "post": {
+        "tags": ["office"],
+        "description": "Generate Services - OFFICE - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/boAdmin/loginAdmin": {
+      "post": {
+        "tags": ["boAdmin"],
+        "description": "Generate Services - BOADMIN - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/boAdmin/listAdmins": {
+      "post": {
+        "tags": ["boAdmin"],
+        "description": "Generate Services - BOADMIN - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/boAdmin/searchAdmins": {
+      "post": {
+        "tags": ["boAdmin"],
+        "description": "Generate Services - BOADMIN - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/boAdmin/createAdmin": {
+      "post": {
+        "tags": ["boAdmin"],
+        "description": "Generate Services - BOADMIN - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/boAdmin/changeAdminState": {
+      "post": {
+        "tags": ["boAdmin"],
+        "description": "Generate Services - BOADMIN - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/boAdmin/updateAdmin": {
+      "post": {
+        "tags": ["boAdmin"],
+        "description": "Generate Services - BOADMIN - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/boAdmin/getAdminInfoById": {
+      "post": {
+        "tags": ["boAdmin"],
+        "description": "Generate Services - BOADMIN - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/boAdmin/boListUsers": {
+      "post": {
+        "tags": ["boAdmin"],
+        "description": "Generate Services - BOADMIN - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/boAdmin/getBroadReportAboutUser": {
+      "post": {
+        "tags": ["boAdmin"],
+        "description": "Generate Services - BOADMIN - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/boAdmin/updateUserState": {
+      "post": {
+        "tags": ["boAdmin"],
+        "description": "Generate Services - BOADMIN - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/checkIn/makeCheckIn": {
+      "post": {
+        "tags": ["checkIn"],
+        "description": "Generate Services - CHECKIN - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/checkOut/makeCheckOut": {
+      "post": {
+        "tags": ["checkOut"],
+        "description": "Generate Services - CHECKOUT - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/user/listUsers": {
+      "post": {
+        "tags": ["user"],
+        "description": "Generate Services - USER - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/user/editUser": {
+      "post": {
+        "tags": ["user"],
+        "description": "Generate Services - USER - POST",
+        "produces": ["application/json"]
+      }
+    }
+  },
+  "definitions": {},
+  "info": {
+    "title": "REST API",
+    "version": "1.0.0",
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "description": "REST API for client",
+    "termsOfService": "http://swagger.io/terms/",
+    "contact": {
+      "email": "ingeniero.miguelvargas@gmail.com"
+    }
+  },
+  "host": "localhost:5000/",
+  "basePath": "api/v1",
+  "tags": [
+    {
+      "name": "Services",
+      "description": "User Services"
+    }
+  ],
+  "schemes": ["http", "https"],
+  "consumes": ["application/json"],
+  "produces": ["application/json"]
+}
