@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>{{title}}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        @media screen {
+
+            * {
+                align-items: center;
+                margin: auto;
+                text-align: center;
+                font-family: "Roboto", sans-serif;
+                font-weight: 400;
+            }
+
+            body {
+                font-family: "Roboto", sans-serif;
+            }
+
+            .body {
+                width: 100%;
+                max-width: 100%;
+                background-color: #F4F6FC;
+            }
+
+            .header {
+                background: url() no-repeat;
+                margin: auto;
+                color: white;
+            }
+
+            .greetings {
+                color: #00338D;
+                font-weight: 900;
+            }
+
+            .greetings2 {
+                color: #00A3A1;
+                font-weight: 900;
+            }
+
+            .marginBottom{
+                margin-bottom: 40px;
+            }
+
+            .container {
+                width: 80%;
+                background-color: #ffffff;
+                font-family: "Roboto", sans-serif;
+                color: #030711;
+                padding-top: 30px;
+                margin-top: 30px;
+                margin-bottom: 30px;
+            }
+
+            .my-auto {
+                margin: 50px auto;
+            }
+
+            .py-auto {
+                padding-top: 200px;
+                padding-bottom: 90px;
+            }
+
+            .footer {
+                background-image: linear-gradient(#02338D, #03499F);
+                color: white;
+            }
+
+            .button {
+                background-color: #020B50;
+                -webkit-border-radius: 14px;
+                -moz-border-radius: 14px;
+                border-radius: 14px;
+                display: inline-block;
+                cursor: pointer;
+                color: #ffffff !important;
+                font-family: 'Roboto';
+                font-size: 18px;
+                font-weight: bold;
+                padding: 10px 76px;
+                margin: 30px auto;
+                text-decoration: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="body">
+        <div class="header">
+            <img src="http://kpmgapi.inkubo.co:5005/imgEmail/header.png" alt="" style="width: 100%;">
+        </div>
+        <div class="container">
+            <div class="my-auto">
+                <h2 class="greetings marginBottom">
+                    ¡Hola, {{ fullName }}!
+                </h2>
+                 <h1 class="greetings">Tienes una reserva creada:</h1>
+                
+                <h1 class="greetings">
+                    {{message}} 
+                </h1>
+
+                <h2 class="greetings2 marginBottom">
+                    Tipo de oficina: {{officeType}} 
+                </h2>
+
+                <h2 class="greetings">
+                    Oficina: {{office}} 
+                </h2>
+
+                <h3 class="greetings2">
+                    {{building}}-{{floor}} 
+                </h3>
+                <h3 class="greetings">
+                    {{time}}
+                </h3>
+                <h3 class="greetings">
+                    reserva #{{numberReservation}}
+                </h3>
+                <br>
+            </div>
+            <div class="my-auto">
+                <a class="button" href="./public/reservas/{{numberReservation}}.ics"></a>
+            </div>
+            <div class="footer">
+                <small>© {{anio}} KPMG - Todos los derechos reservados.</small>
+            </div>
+        </div>
+        
+    </div>
+</body>
+
+</html>
