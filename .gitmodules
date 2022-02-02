@@ -1,0 +1,3 @@
+[submodule "src/app/models"]
+	path = src/app/models
+	url = https://github.com/jperniakubo/kg-models.git
