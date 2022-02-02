@@ -5,7 +5,24 @@
       "get": {
         "tags": ["kg"],
         "description": "Generate Services - KG - GET",
-        "produces": ["application/json"]
+        "produces": ["application/json", "text/html"],
+        "security": [
+          {
+            "x-bc-access-token": []
+          },
+          {
+            "x-bc-auth-token": []
+          }
+        ],
+        "responses": {
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "string",
+              "example": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot GET /v1/kg/generate-access-token</pre>\n</body>\n</html>\n"
+            }
+          }
+        }
       }
     },
     "/onboarding/signup": {
@@ -61,7 +78,16 @@
       "get": {
         "tags": ["cat"],
         "description": "Generate Services - CAT - GET",
-        "produces": ["application/json"]
+        "produces": ["application/json", "text/html"],
+        "responses": {
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "string",
+              "example": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot GET /cat</pre>\n</body>\n</html>\n"
+            }
+          }
+        }
       },
       "post": {
         "tags": ["cat"],
@@ -97,132 +123,6 @@
       "put": {
         "tags": ["cat"],
         "description": "Generate Services - CAT - PUT",
-        "produces": ["application/json"]
-      }
-    },
-    "/city": {
-      "post": {
-        "tags": ["city"],
-        "description": "Generate Services - CITY - POST",
-        "produces": ["application/json"]
-      }
-    },
-    "/building/getBuildingsByCity": {
-      "post": {
-        "tags": ["building"],
-        "description": "Generate Services - BUILDING - POST",
-        "produces": ["application/json"]
-      }
-    },
-    "/building/findBuilding": {
-      "post": {
-        "tags": ["building"],
-        "description": "Generate Services - BUILDING - POST",
-        "produces": ["application/json"]
-      }
-    },
-    "/building/getFloorsByBuilding": {
-      "post": {
-        "tags": ["building"],
-        "description": "Generate Services - BUILDING - POST",
-        "produces": ["application/json"]
-      }
-    },
-    "/officeType/getAll": {
-      "post": {
-        "tags": ["officeType"],
-        "description": "Generate Services - OFFICETYPE - POST",
-        "produces": ["application/json"]
-      }
-    },
-    "/helpCenter/getAllQuestions": {
-      "post": {
-        "tags": ["helpCenter"],
-        "description": "Generate Services - HELPCENTER - POST",
-        "produces": ["application/json"]
-      }
-    },
-    "/helpCenter/generateSupportTicket": {
-      "post": {
-        "tags": ["helpCenter"],
-        "description": "Generate Services - HELPCENTER - POST",
-        "produces": ["application/json"]
-      }
-    },
-    "/phoneServiceNumber/getAll": {
-      "post": {
-        "tags": ["phoneServiceNumber"],
-        "description": "Generate Services - PHONESERVICENUMBER - POST",
-        "produces": ["application/json"]
-      }
-    },
-    "/office/getListOfOfficeByFloor": {
-      "post": {
-        "tags": ["office"],
-        "description": "Generate Services - OFFICE - POST",
-        "produces": ["application/json"]
-      }
-    },
-    "/office/getOfficeInfo": {
-      "post": {
-        "tags": ["office"],
-        "description": "Generate Services - OFFICE - POST",
-        "produces": ["application/json"]
-      }
-    },
-    "/office/getFavoritesOfficesOfUser": {
-      "post": {
-        "tags": ["office"],
-        "description": "Generate Services - OFFICE - POST",
-        "produces": ["application/json"]
-      }
-    },
-    "/office/addOfficeToFavorites": {
-      "post": {
-        "tags": ["office"],
-        "description": "Generate Services - OFFICE - POST",
-        "produces": ["application/json"]
-      }
-    },
-    "/office/reservationOffice": {
-      "post": {
-        "tags": ["office"],
-        "description": "Generate Services - OFFICE - POST",
-        "produces": ["application/json"]
-      }
-    },
-    "/office/listUserReservations": {
-      "post": {
-        "tags": ["office"],
-        "description": "Generate Services - OFFICE - POST",
-        "produces": ["application/json"]
-      }
-    },
-    "/office/getReservationInfo": {
-      "post": {
-        "tags": ["office"],
-        "description": "Generate Services - OFFICE - POST",
-        "produces": ["application/json"]
-      }
-    },
-    "/office/cancelReservation": {
-      "post": {
-        "tags": ["office"],
-        "description": "Generate Services - OFFICE - POST",
-        "produces": ["application/json"]
-      }
-    },
-    "/office/updateReservation": {
-      "post": {
-        "tags": ["office"],
-        "description": "Generate Services - OFFICE - POST",
-        "produces": ["application/json"]
-      }
-    },
-    "/office/checkQrOffice": {
-      "post": {
-        "tags": ["office"],
-        "description": "Generate Services - OFFICE - POST",
         "produces": ["application/json"]
       }
     },
@@ -275,6 +175,13 @@
         "produces": ["application/json"]
       }
     },
+    "/boAdmin/getAllRolesAdmin": {
+      "post": {
+        "tags": ["boAdmin"],
+        "description": "Generate Services - BOADMIN - POST",
+        "produces": ["application/json"]
+      }
+    },
     "/boAdmin/boListUsers": {
       "post": {
         "tags": ["boAdmin"],
@@ -296,31 +203,680 @@
         "produces": ["application/json"]
       }
     },
-    "/checkIn/makeCheckIn": {
-      "post": {
-        "tags": ["checkIn"],
-        "description": "Generate Services - CHECKIN - POST",
+    "/office/page/:limit/:offset": {
+      "get": {
+        "tags": ["office"],
+        "description": "Generate Services - OFFICE - GET",
         "produces": ["application/json"]
       }
     },
-    "/checkOut/makeCheckOut": {
-      "post": {
-        "tags": ["checkOut"],
-        "description": "Generate Services - CHECKOUT - POST",
+    "/office/officeArrivalsDirection/:officeId/:limit/:offset": {
+      "get": {
+        "tags": ["office"],
+        "description": "Generate Services - OFFICE - GET",
         "produces": ["application/json"]
       }
     },
-    "/user/listUsers": {
+    "/office": {
+      "get": {
+        "tags": ["office"],
+        "description": "Generate Services - OFFICE - GET",
+        "produces": ["application/json"]
+      },
+      "post": {
+        "tags": ["office"],
+        "description": "Generate Services - OFFICE - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/office/:id": {
+      "get": {
+        "tags": ["office"],
+        "description": "Generate Services - OFFICE - GET",
+        "produces": ["application/json"]
+      },
+      "put": {
+        "tags": ["office"],
+        "description": "Generate Services - OFFICE - PUT",
+        "produces": ["application/json"]
+      },
+      "delete": {
+        "tags": ["office"],
+        "description": "Generate Services - OFFICE - DELETE",
+        "produces": ["application/json"]
+      }
+    },
+    "/office/filter/:name": {
+      "get": {
+        "tags": ["office"],
+        "description": "Generate Services - OFFICE - GET",
+        "produces": ["application/json"]
+      }
+    },
+    "/office/all/filter": {
+      "post": {
+        "tags": ["office"],
+        "description": "Generate Services - OFFICE - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/office/getListOffice": {
+      "post": {
+        "tags": ["office"],
+        "description": "Generate Services - OFFICE - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/office/status/:id": {
+      "put": {
+        "tags": ["office"],
+        "description": "Generate Services - OFFICE - PUT",
+        "produces": ["application/json"]
+      }
+    },
+    "/office/status/arrival/:id": {
+      "put": {
+        "tags": ["office"],
+        "description": "Generate Services - OFFICE - PUT",
+        "produces": ["application/json"]
+      }
+    },
+    "/office/status/item/:id": {
+      "put": {
+        "tags": ["office"],
+        "description": "Generate Services - OFFICE - PUT",
+        "produces": ["application/json"]
+      }
+    },
+    "/office/getAllOffice": {
+      "get": {
+        "tags": ["office"],
+        "description": "Generate Services - OFFICE - GET",
+        "produces": ["application/json"]
+      }
+    },
+    "/office/changeStatus/:id": {
+      "put": {
+        "tags": ["office"],
+        "description": "Generate Services - OFFICE - PUT",
+        "produces": ["application/json"]
+      }
+    },
+    "/office/createOffice": {
+      "post": {
+        "tags": ["office"],
+        "description": "Generate Services - OFFICE - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/office/getListOfOfficeByFloor": {
+      "post": {
+        "tags": ["office"],
+        "description": "Generate Services - OFFICE - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/office/getOfficeInfo": {
+      "post": {
+        "tags": ["office"],
+        "description": "Generate Services - OFFICE - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/office/getFavoritesOfficesOfUser": {
+      "post": {
+        "tags": ["office"],
+        "description": "Generate Services - OFFICE - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/office/addOfficeToFavorites": {
+      "post": {
+        "tags": ["office"],
+        "description": "Generate Services - OFFICE - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/office/reservationOffice": {
+      "post": {
+        "tags": ["office"],
+        "description": "Generate Services - OFFICE - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/office/listUserReservations": {
+      "post": {
+        "tags": ["office"],
+        "description": "Generate Services - OFFICE - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/office/getReservationInfo": {
+      "post": {
+        "tags": ["office"],
+        "description": "Generate Services - OFFICE - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/office/verifyQrCode": {
+      "post": {
+        "tags": ["office"],
+        "description": "Generate Services - OFFICE - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/office/cancelReservation": {
+      "post": {
+        "tags": ["office"],
+        "description": "Generate Services - OFFICE - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/office/updateReservation": {
+      "post": {
+        "tags": ["office"],
+        "description": "Generate Services - OFFICE - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/office/checkQrOffice": {
+      "post": {
+        "tags": ["office"],
+        "description": "Generate Services - OFFICE - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/reservationOffice/page/:limit/:offset": {
+      "get": {
+        "tags": ["reservationOffice"],
+        "description": "Generate Services - RESERVATIONOFFICE - GET",
+        "produces": ["application/json"]
+      }
+    },
+    "/reservationOffice": {
+      "get": {
+        "tags": ["reservationOffice"],
+        "description": "Generate Services - RESERVATIONOFFICE - GET",
+        "produces": ["application/json"]
+      },
+      "post": {
+        "tags": ["reservationOffice"],
+        "description": "Generate Services - RESERVATIONOFFICE - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/reservationOffice/:id": {
+      "get": {
+        "tags": ["reservationOffice"],
+        "description": "Generate Services - RESERVATIONOFFICE - GET",
+        "produces": ["application/json"]
+      },
+      "put": {
+        "tags": ["reservationOffice"],
+        "description": "Generate Services - RESERVATIONOFFICE - PUT",
+        "produces": ["application/json"]
+      },
+      "delete": {
+        "tags": ["reservationOffice"],
+        "description": "Generate Services - RESERVATIONOFFICE - DELETE",
+        "produces": ["application/json"]
+      }
+    },
+    "/reservationOffice/all/filter": {
+      "post": {
+        "tags": ["reservationOffice"],
+        "description": "Generate Services - RESERVATIONOFFICE - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/reservationOffice/getAllByDateAndOffice": {
+      "post": {
+        "tags": ["reservationOffice"],
+        "description": "Generate Services - RESERVATIONOFFICE - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/reservationOffice/filter/:name": {
+      "get": {
+        "tags": ["reservationOffice"],
+        "description": "Generate Services - RESERVATIONOFFICE - GET",
+        "produces": ["application/json"]
+      }
+    },
+    "/reservationOffice/status/:id": {
+      "put": {
+        "tags": ["reservationOffice"],
+        "description": "Generate Services - RESERVATIONOFFICE - PUT",
+        "produces": ["application/json"]
+      }
+    },
+    "/officeType/page/:limit/:offset": {
+      "get": {
+        "tags": ["officeType"],
+        "description": "Generate Services - OFFICETYPE - GET",
+        "produces": ["application/json"]
+      }
+    },
+    "/officeType": {
+      "get": {
+        "tags": ["officeType"],
+        "description": "Generate Services - OFFICETYPE - GET",
+        "produces": ["application/json"]
+      },
+      "post": {
+        "tags": ["officeType"],
+        "description": "Generate Services - OFFICETYPE - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/officeType/:id": {
+      "get": {
+        "tags": ["officeType"],
+        "description": "Generate Services - OFFICETYPE - GET",
+        "produces": ["application/json"]
+      },
+      "put": {
+        "tags": ["officeType"],
+        "description": "Generate Services - OFFICETYPE - PUT",
+        "produces": ["application/json"]
+      },
+      "delete": {
+        "tags": ["officeType"],
+        "description": "Generate Services - OFFICETYPE - DELETE",
+        "produces": ["application/json"]
+      }
+    },
+    "/officeType/filter/:name": {
+      "get": {
+        "tags": ["officeType"],
+        "description": "Generate Services - OFFICETYPE - GET",
+        "produces": ["application/json"]
+      }
+    },
+    "/officeType/all/filter": {
+      "post": {
+        "tags": ["officeType"],
+        "description": "Generate Services - OFFICETYPE - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/officeType/status/:id": {
+      "put": {
+        "tags": ["officeType"],
+        "description": "Generate Services - OFFICETYPE - PUT",
+        "produces": ["application/json"]
+      }
+    },
+    "/helpCenter/page/:limit/:offset": {
+      "get": {
+        "tags": ["helpCenter"],
+        "description": "Generate Services - HELPCENTER - GET",
+        "produces": ["application/json"]
+      }
+    },
+    "/helpCenter": {
+      "get": {
+        "tags": ["helpCenter"],
+        "description": "Generate Services - HELPCENTER - GET",
+        "produces": ["application/json"]
+      },
+      "post": {
+        "tags": ["helpCenter"],
+        "description": "Generate Services - HELPCENTER - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/helpCenter/:id": {
+      "get": {
+        "tags": ["helpCenter"],
+        "description": "Generate Services - HELPCENTER - GET",
+        "produces": ["application/json"]
+      },
+      "put": {
+        "tags": ["helpCenter"],
+        "description": "Generate Services - HELPCENTER - PUT",
+        "produces": ["application/json"]
+      },
+      "delete": {
+        "tags": ["helpCenter"],
+        "description": "Generate Services - HELPCENTER - DELETE",
+        "produces": ["application/json"]
+      }
+    },
+    "/helpCenter/filter/:name": {
+      "get": {
+        "tags": ["helpCenter"],
+        "description": "Generate Services - HELPCENTER - GET",
+        "produces": ["application/json"]
+      }
+    },
+    "/helpCenter/all/filter": {
+      "post": {
+        "tags": ["helpCenter"],
+        "description": "Generate Services - HELPCENTER - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/helpCenter/status/:id": {
+      "put": {
+        "tags": ["helpCenter"],
+        "description": "Generate Services - HELPCENTER - PUT",
+        "produces": ["application/json"]
+      }
+    },
+    "/systemOfficeItems/getAllSystemOfficeItems": {
+      "post": {
+        "tags": ["systemOfficeItems"],
+        "description": "Generate Services - SYSTEMOFFICEITEMS - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/dashboard/all/filter": {
+      "post": {
+        "tags": ["dashboard"],
+        "description": "Generate Services - DASHBOARD - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/dashboard/all/more": {
+      "post": {
+        "tags": ["dashboard"],
+        "description": "Generate Services - DASHBOARD - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/dashboard/getOfficesPercent": {
+      "post": {
+        "tags": ["dashboard"],
+        "description": "Generate Services - DASHBOARD - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/dashboard/all/less": {
+      "post": {
+        "tags": ["dashboard"],
+        "description": "Generate Services - DASHBOARD - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/dashboard/getTopOfficesMoreReserved": {
+      "post": {
+        "tags": ["dashboard"],
+        "description": "Generate Services - DASHBOARD - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/dashboard/all/city": {
+      "post": {
+        "tags": ["dashboard"],
+        "description": "Generate Services - DASHBOARD - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/dashboard/all/users": {
+      "post": {
+        "tags": ["dashboard"],
+        "description": "Generate Services - DASHBOARD - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/dashboard/getUsersCancelReservations": {
+      "post": {
+        "tags": ["dashboard"],
+        "description": "Generate Services - DASHBOARD - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/dashboard/all/office": {
+      "post": {
+        "tags": ["dashboard"],
+        "description": "Generate Services - DASHBOARD - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/dashboard/totalReservations": {
+      "post": {
+        "tags": ["dashboard"],
+        "description": "Generate Services - DASHBOARD - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/dashboard/reservationsByCity": {
+      "post": {
+        "tags": ["dashboard"],
+        "description": "Generate Services - DASHBOARD - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/dashboard/reservationsByOfficeType": {
+      "post": {
+        "tags": ["dashboard"],
+        "description": "Generate Services - DASHBOARD - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/floorBuilding/page/:limit/:offset": {
+      "get": {
+        "tags": ["floorBuilding"],
+        "description": "Generate Services - FLOORBUILDING - GET",
+        "produces": ["application/json"]
+      }
+    },
+    "/floorBuilding": {
+      "get": {
+        "tags": ["floorBuilding"],
+        "description": "Generate Services - FLOORBUILDING - GET",
+        "produces": ["application/json"]
+      },
+      "post": {
+        "tags": ["floorBuilding"],
+        "description": "Generate Services - FLOORBUILDING - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/floorBuilding/:id": {
+      "get": {
+        "tags": ["floorBuilding"],
+        "description": "Generate Services - FLOORBUILDING - GET",
+        "produces": ["application/json"]
+      },
+      "put": {
+        "tags": ["floorBuilding"],
+        "description": "Generate Services - FLOORBUILDING - PUT",
+        "produces": ["application/json"]
+      },
+      "delete": {
+        "tags": ["floorBuilding"],
+        "description": "Generate Services - FLOORBUILDING - DELETE",
+        "produces": ["application/json"]
+      }
+    },
+    "/floorBuilding/filter/:name": {
+      "get": {
+        "tags": ["floorBuilding"],
+        "description": "Generate Services - FLOORBUILDING - GET",
+        "produces": ["application/json"]
+      }
+    },
+    "/floorBuilding/all/filter": {
+      "post": {
+        "tags": ["floorBuilding"],
+        "description": "Generate Services - FLOORBUILDING - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/floorBuilding/all/building/:buildingId": {
+      "get": {
+        "tags": ["floorBuilding"],
+        "description": "Generate Services - FLOORBUILDING - GET",
+        "produces": ["application/json"]
+      }
+    },
+    "/floorBuilding/status/:id": {
+      "put": {
+        "tags": ["floorBuilding"],
+        "description": "Generate Services - FLOORBUILDING - PUT",
+        "produces": ["application/json"]
+      }
+    },
+    "/city": {
+      "post": {
+        "tags": ["city"],
+        "description": "Generate Services - CITY - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/city/listCities": {
+      "post": {
+        "tags": ["city"],
+        "description": "Generate Services - CITY - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/city/setCityStatus": {
+      "post": {
+        "tags": ["city"],
+        "description": "Generate Services - CITY - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/city/createCity": {
+      "post": {
+        "tags": ["city"],
+        "description": "Generate Services - CITY - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/city/updateCity": {
+      "post": {
+        "tags": ["city"],
+        "description": "Generate Services - CITY - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/city/cityById": {
+      "post": {
+        "tags": ["city"],
+        "description": "Generate Services - CITY - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/building/listBuildings": {
+      "post": {
+        "tags": ["building"],
+        "description": "Generate Services - BUILDING - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/building/setBuildingStatus": {
+      "post": {
+        "tags": ["building"],
+        "description": "Generate Services - BUILDING - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/building/createBuilding": {
+      "post": {
+        "tags": ["building"],
+        "description": "Generate Services - BUILDING - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/building/updateBuilding": {
+      "post": {
+        "tags": ["building"],
+        "description": "Generate Services - BUILDING - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/building/buildingById": {
+      "post": {
+        "tags": ["building"],
+        "description": "Generate Services - BUILDING - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/user/changeUserState": {
       "post": {
         "tags": ["user"],
         "description": "Generate Services - USER - POST",
         "produces": ["application/json"]
       }
     },
-    "/user/editUser": {
+    "/user/getUserInfoById": {
       "post": {
         "tags": ["user"],
         "description": "Generate Services - USER - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/notificationReservation/listNotificationReservation": {
+      "post": {
+        "tags": ["notificationReservation"],
+        "description": "Generate Services - NOTIFICATIONRESERVATION - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/position/getAllPositions": {
+      "post": {
+        "tags": ["position"],
+        "description": "Generate Services - POSITION - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/position/getPositions": {
+      "post": {
+        "tags": ["position"],
+        "description": "Generate Services - POSITION - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/position/createPosition": {
+      "post": {
+        "tags": ["position"],
+        "description": "Generate Services - POSITION - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/position/updatePosition": {
+      "post": {
+        "tags": ["position"],
+        "description": "Generate Services - POSITION - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/position/getPositionById": {
+      "post": {
+        "tags": ["position"],
+        "description": "Generate Services - POSITION - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/systemTimeAvailable/updateTimeAvailable": {
+      "post": {
+        "tags": ["systemTimeAvailable"],
+        "description": "Generate Services - SYSTEMTIMEAVAILABLE - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/systemTimeAvailable/getTimeById": {
+      "post": {
+        "tags": ["systemTimeAvailable"],
+        "description": "Generate Services - SYSTEMTIMEAVAILABLE - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/systemPercentage/getAllPercentages": {
+      "post": {
+        "tags": ["systemPercentage"],
+        "description": "Generate Services - SYSTEMPERCENTAGE - POST",
+        "produces": ["application/json"]
+      }
+    },
+    "/systemItemIcon/getAllSystemIcons": {
+      "post": {
+        "tags": ["systemItemIcon"],
+        "description": "Generate Services - SYSTEMITEMICON - POST",
         "produces": ["application/json"]
       }
     }
@@ -336,7 +892,7 @@
     "description": "REST API for client",
     "termsOfService": "http://swagger.io/terms/",
     "contact": {
-      "email": "ingeniero.miguelvargas@gmail.com"
+      "email": null
     }
   },
   "host": "localhost:5000/",
@@ -349,5 +905,17 @@
   ],
   "schemes": ["http", "https"],
   "consumes": ["application/json"],
-  "produces": ["application/json"]
+  "produces": ["application/json"],
+  "securityDefinitions": {
+    "x-bc-access-token": {
+      "name": "x-bc-access-token",
+      "in": "header",
+      "type": "apiKey"
+    },
+    "x-bc-auth-token": {
+      "name": "x-bc-auth-token",
+      "in": "header",
+      "type": "apiKey"
+    }
+  }
 }

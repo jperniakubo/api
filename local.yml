@@ -1,0 +1,65 @@
+version: '3'
+
+volumes:
+  local_database_data: {}
+  local_database_data_backups: {}
+
+services:
+  postgres:
+    build:
+      context: .
+      dockerfile: ./compose/production/postgres/Dockerfile
+    image: cride_production_postgres
+    volumes:
+      - local_database_data:/var/lib/postgresql/data
+      - local_database_data_backups:/backups
+    env_file:
+      - ./environment/.local/.postgres
+      node: &node
+      build:
+          context: ./compose/node
+      depends_on:
+          - mysql
+      image: api_local_node
+      volumes:
+          - ../:/opt/app
+      env_file:
+          - ./environment/local/.node
+      ports:
+          - "8000:8000"
+      tty: true
+
+  mysql:
+      build:
+          context: ./compose/mysql
+      image: api_local_mysql
+      volumes:
+          - ./data/mysql/:/var/lib/mysql
+          - local_mysql_data:/var/lib/mysql/data
+          - local_mysql_data_backups:/backups
+      env_file:
+          - ./environment/local/.mysql
+      expose:
+          - "3306"
+
+  nginx:
+      build:
+          context: ./compose/nginx
+      env_file:
+          - ./environment/local/.nginx
+      volumes:
+          - ./data/logs/nginx/:/var/log/nginx
+          - ./certbot/certs/:/var/certs
+      ports:
+          - "80:80"
+          - "443:443"
+      tty: true
+
+  certbot:
+      build:
+          context: ./compose/certbot
+      links:
+          - nginx
+      volumes:
+        - ./compose/certbot/letsencrypt/:/var/www/letsencrypt
+        - ./compose/certbot/certs/:/var/certs
