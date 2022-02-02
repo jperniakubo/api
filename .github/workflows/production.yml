@@ -1,0 +1,39 @@
+name: itegracion continua con node.js
+on:
+  push:
+    branches:    
+      - production
+jobs: 
+  ci_to_master:
+    runs-on: ubuntu-latest
+    environment: production
+    steps: 
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v1
+      with: 
+        node-version: 14.7.0
+        cache: 'npm'
+    - run: yarn install
+    - run: npm install
+    - run: chmod 777 ./base.sh
+    - run: sed -i "s/PROJECT/kpmgboapi/g" ./base.sh
+    - run: sed -i "s/%ENV/development/g" ./base.sh
+    - run: chmod 777 ./base.sh
+    - run: sed -i "s/PROJECT/kpmgboapi/g" ./package.json
+    - run: sed -i "s/.env.production/.env.development/g" ./package.json
+    - run: sed -i "s/NODE_ENV=production tsc/NODE_ENV=development tsc/g" ./package.json
+    - run: sed -i "s/NODE_ENV=production babel/NODE_ENV=development babel/g" ./package.json
+    - run: yarn super:build
+    - run: chmod 400 ./cert/node_kpmg.pem
+    - uses: wlixcc/SFTP-Deploy-Action@v1.0
+      with:
+        username: 'node_kpmg'
+        server: '52.12.254.63'
+        ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
+        local_path: './dist/*'
+        remote_path: '/home/kpmgboapi/'
+        args: '-o ConnectTimeout=5'
+
+        
+
+    
