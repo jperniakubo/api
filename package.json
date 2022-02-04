@@ -97,6 +97,8 @@
     "express-list-endpoints": "^5.0.0",
     "express-oas-generator": "^1.0.24",
     "faker": "^4.1.0",
+    "firebase": "^9.6.6",
+    "firebase-admin": "^9.2.0",
     "http-status-codes": "^1.4.0",
     "ics": "^2.26.2",
     "jsonwebtoken": "^8.5.1",
