@@ -5,24 +5,7 @@
       "get": {
         "tags": ["kg"],
         "description": "Generate Services - KG - GET",
-        "produces": ["application/json", "text/html"],
-        "security": [
-          {
-            "x-bc-access-token": []
-          },
-          {
-            "x-bc-auth-token": []
-          }
-        ],
-        "responses": {
-          "404": {
-            "description": "Not Found",
-            "schema": {
-              "type": "string",
-              "example": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot GET /v1/kg/generate-access-token</pre>\n</body>\n</html>\n"
-            }
-          }
-        }
+        "produces": ["application/json"]
       }
     },
     "/onboarding/signup": {
@@ -78,16 +61,7 @@
       "get": {
         "tags": ["cat"],
         "description": "Generate Services - CAT - GET",
-        "produces": ["application/json", "text/html"],
-        "responses": {
-          "404": {
-            "description": "Not Found",
-            "schema": {
-              "type": "string",
-              "example": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot GET /cat</pre>\n</body>\n</html>\n"
-            }
-          }
-        }
+        "produces": ["application/json"]
       },
       "post": {
         "tags": ["cat"],
@@ -126,186 +100,59 @@
         "produces": ["application/json"]
       }
     },
-    "/boAdmin/loginAdmin": {
+    "/city": {
       "post": {
-        "tags": ["boAdmin"],
-        "description": "Generate Services - BOADMIN - POST",
+        "tags": ["city"],
+        "description": "Generate Services - CITY - POST",
         "produces": ["application/json"]
       }
     },
-    "/boAdmin/listAdmins": {
+    "/building/getBuildingsByCity": {
       "post": {
-        "tags": ["boAdmin"],
-        "description": "Generate Services - BOADMIN - POST",
+        "tags": ["building"],
+        "description": "Generate Services - BUILDING - POST",
         "produces": ["application/json"]
       }
     },
-    "/boAdmin/searchAdmins": {
+    "/building/findBuilding": {
       "post": {
-        "tags": ["boAdmin"],
-        "description": "Generate Services - BOADMIN - POST",
+        "tags": ["building"],
+        "description": "Generate Services - BUILDING - POST",
         "produces": ["application/json"]
       }
     },
-    "/boAdmin/createAdmin": {
+    "/building/getFloorsByBuilding": {
       "post": {
-        "tags": ["boAdmin"],
-        "description": "Generate Services - BOADMIN - POST",
+        "tags": ["building"],
+        "description": "Generate Services - BUILDING - POST",
         "produces": ["application/json"]
       }
     },
-    "/boAdmin/changeAdminState": {
+    "/officeType/getAll": {
       "post": {
-        "tags": ["boAdmin"],
-        "description": "Generate Services - BOADMIN - POST",
+        "tags": ["officeType"],
+        "description": "Generate Services - OFFICETYPE - POST",
         "produces": ["application/json"]
       }
     },
-    "/boAdmin/updateAdmin": {
+    "/helpCenter/getAllQuestions": {
       "post": {
-        "tags": ["boAdmin"],
-        "description": "Generate Services - BOADMIN - POST",
+        "tags": ["helpCenter"],
+        "description": "Generate Services - HELPCENTER - POST",
         "produces": ["application/json"]
       }
     },
-    "/boAdmin/getAdminInfoById": {
+    "/helpCenter/generateSupportTicket": {
       "post": {
-        "tags": ["boAdmin"],
-        "description": "Generate Services - BOADMIN - POST",
+        "tags": ["helpCenter"],
+        "description": "Generate Services - HELPCENTER - POST",
         "produces": ["application/json"]
       }
     },
-    "/boAdmin/getAllRolesAdmin": {
+    "/phoneServiceNumber/getAll": {
       "post": {
-        "tags": ["boAdmin"],
-        "description": "Generate Services - BOADMIN - POST",
-        "produces": ["application/json"]
-      }
-    },
-    "/boAdmin/boListUsers": {
-      "post": {
-        "tags": ["boAdmin"],
-        "description": "Generate Services - BOADMIN - POST",
-        "produces": ["application/json"]
-      }
-    },
-    "/boAdmin/getBroadReportAboutUser": {
-      "post": {
-        "tags": ["boAdmin"],
-        "description": "Generate Services - BOADMIN - POST",
-        "produces": ["application/json"]
-      }
-    },
-    "/boAdmin/updateUserState": {
-      "post": {
-        "tags": ["boAdmin"],
-        "description": "Generate Services - BOADMIN - POST",
-        "produces": ["application/json"]
-      }
-    },
-    "/office/page/:limit/:offset": {
-      "get": {
-        "tags": ["office"],
-        "description": "Generate Services - OFFICE - GET",
-        "produces": ["application/json"]
-      }
-    },
-    "/office/officeArrivalsDirection/:officeId/:limit/:offset": {
-      "get": {
-        "tags": ["office"],
-        "description": "Generate Services - OFFICE - GET",
-        "produces": ["application/json"]
-      }
-    },
-    "/office": {
-      "get": {
-        "tags": ["office"],
-        "description": "Generate Services - OFFICE - GET",
-        "produces": ["application/json"]
-      },
-      "post": {
-        "tags": ["office"],
-        "description": "Generate Services - OFFICE - POST",
-        "produces": ["application/json"]
-      }
-    },
-    "/office/:id": {
-      "get": {
-        "tags": ["office"],
-        "description": "Generate Services - OFFICE - GET",
-        "produces": ["application/json"]
-      },
-      "put": {
-        "tags": ["office"],
-        "description": "Generate Services - OFFICE - PUT",
-        "produces": ["application/json"]
-      },
-      "delete": {
-        "tags": ["office"],
-        "description": "Generate Services - OFFICE - DELETE",
-        "produces": ["application/json"]
-      }
-    },
-    "/office/filter/:name": {
-      "get": {
-        "tags": ["office"],
-        "description": "Generate Services - OFFICE - GET",
-        "produces": ["application/json"]
-      }
-    },
-    "/office/all/filter": {
-      "post": {
-        "tags": ["office"],
-        "description": "Generate Services - OFFICE - POST",
-        "produces": ["application/json"]
-      }
-    },
-    "/office/getListOffice": {
-      "post": {
-        "tags": ["office"],
-        "description": "Generate Services - OFFICE - POST",
-        "produces": ["application/json"]
-      }
-    },
-    "/office/status/:id": {
-      "put": {
-        "tags": ["office"],
-        "description": "Generate Services - OFFICE - PUT",
-        "produces": ["application/json"]
-      }
-    },
-    "/office/status/arrival/:id": {
-      "put": {
-        "tags": ["office"],
-        "description": "Generate Services - OFFICE - PUT",
-        "produces": ["application/json"]
-      }
-    },
-    "/office/status/item/:id": {
-      "put": {
-        "tags": ["office"],
-        "description": "Generate Services - OFFICE - PUT",
-        "produces": ["application/json"]
-      }
-    },
-    "/office/getAllOffice": {
-      "get": {
-        "tags": ["office"],
-        "description": "Generate Services - OFFICE - GET",
-        "produces": ["application/json"]
-      }
-    },
-    "/office/changeStatus/:id": {
-      "put": {
-        "tags": ["office"],
-        "description": "Generate Services - OFFICE - PUT",
-        "produces": ["application/json"]
-      }
-    },
-    "/office/createOffice": {
-      "post": {
-        "tags": ["office"],
-        "description": "Generate Services - OFFICE - POST",
+        "tags": ["phoneServiceNumber"],
+        "description": "Generate Services - PHONESERVICENUMBER - POST",
         "produces": ["application/json"]
       }
     },
@@ -358,13 +205,6 @@
         "produces": ["application/json"]
       }
     },
-    "/office/verifyQrCode": {
-      "post": {
-        "tags": ["office"],
-        "description": "Generate Services - OFFICE - POST",
-        "produces": ["application/json"]
-      }
-    },
     "/office/cancelReservation": {
       "post": {
         "tags": ["office"],
@@ -386,497 +226,101 @@
         "produces": ["application/json"]
       }
     },
-    "/reservationOffice/page/:limit/:offset": {
-      "get": {
-        "tags": ["reservationOffice"],
-        "description": "Generate Services - RESERVATIONOFFICE - GET",
-        "produces": ["application/json"]
-      }
-    },
-    "/reservationOffice": {
-      "get": {
-        "tags": ["reservationOffice"],
-        "description": "Generate Services - RESERVATIONOFFICE - GET",
-        "produces": ["application/json"]
-      },
+    "/boAdmin/loginAdmin": {
       "post": {
-        "tags": ["reservationOffice"],
-        "description": "Generate Services - RESERVATIONOFFICE - POST",
+        "tags": ["boAdmin"],
+        "description": "Generate Services - BOADMIN - POST",
         "produces": ["application/json"]
       }
     },
-    "/reservationOffice/:id": {
-      "get": {
-        "tags": ["reservationOffice"],
-        "description": "Generate Services - RESERVATIONOFFICE - GET",
-        "produces": ["application/json"]
-      },
-      "put": {
-        "tags": ["reservationOffice"],
-        "description": "Generate Services - RESERVATIONOFFICE - PUT",
-        "produces": ["application/json"]
-      },
-      "delete": {
-        "tags": ["reservationOffice"],
-        "description": "Generate Services - RESERVATIONOFFICE - DELETE",
-        "produces": ["application/json"]
-      }
-    },
-    "/reservationOffice/all/filter": {
+    "/boAdmin/listAdmins": {
       "post": {
-        "tags": ["reservationOffice"],
-        "description": "Generate Services - RESERVATIONOFFICE - POST",
+        "tags": ["boAdmin"],
+        "description": "Generate Services - BOADMIN - POST",
         "produces": ["application/json"]
       }
     },
-    "/reservationOffice/getAllByDateAndOffice": {
+    "/boAdmin/searchAdmins": {
       "post": {
-        "tags": ["reservationOffice"],
-        "description": "Generate Services - RESERVATIONOFFICE - POST",
+        "tags": ["boAdmin"],
+        "description": "Generate Services - BOADMIN - POST",
         "produces": ["application/json"]
       }
     },
-    "/reservationOffice/filter/:name": {
-      "get": {
-        "tags": ["reservationOffice"],
-        "description": "Generate Services - RESERVATIONOFFICE - GET",
-        "produces": ["application/json"]
-      }
-    },
-    "/reservationOffice/status/:id": {
-      "put": {
-        "tags": ["reservationOffice"],
-        "description": "Generate Services - RESERVATIONOFFICE - PUT",
-        "produces": ["application/json"]
-      }
-    },
-    "/officeType/page/:limit/:offset": {
-      "get": {
-        "tags": ["officeType"],
-        "description": "Generate Services - OFFICETYPE - GET",
-        "produces": ["application/json"]
-      }
-    },
-    "/officeType": {
-      "get": {
-        "tags": ["officeType"],
-        "description": "Generate Services - OFFICETYPE - GET",
-        "produces": ["application/json"]
-      },
+    "/boAdmin/createAdmin": {
       "post": {
-        "tags": ["officeType"],
-        "description": "Generate Services - OFFICETYPE - POST",
+        "tags": ["boAdmin"],
+        "description": "Generate Services - BOADMIN - POST",
         "produces": ["application/json"]
       }
     },
-    "/officeType/:id": {
-      "get": {
-        "tags": ["officeType"],
-        "description": "Generate Services - OFFICETYPE - GET",
-        "produces": ["application/json"]
-      },
-      "put": {
-        "tags": ["officeType"],
-        "description": "Generate Services - OFFICETYPE - PUT",
-        "produces": ["application/json"]
-      },
-      "delete": {
-        "tags": ["officeType"],
-        "description": "Generate Services - OFFICETYPE - DELETE",
-        "produces": ["application/json"]
-      }
-    },
-    "/officeType/filter/:name": {
-      "get": {
-        "tags": ["officeType"],
-        "description": "Generate Services - OFFICETYPE - GET",
-        "produces": ["application/json"]
-      }
-    },
-    "/officeType/all/filter": {
+    "/boAdmin/changeAdminState": {
       "post": {
-        "tags": ["officeType"],
-        "description": "Generate Services - OFFICETYPE - POST",
+        "tags": ["boAdmin"],
+        "description": "Generate Services - BOADMIN - POST",
         "produces": ["application/json"]
       }
     },
-    "/officeType/status/:id": {
-      "put": {
-        "tags": ["officeType"],
-        "description": "Generate Services - OFFICETYPE - PUT",
-        "produces": ["application/json"]
-      }
-    },
-    "/helpCenter/page/:limit/:offset": {
-      "get": {
-        "tags": ["helpCenter"],
-        "description": "Generate Services - HELPCENTER - GET",
-        "produces": ["application/json"]
-      }
-    },
-    "/helpCenter": {
-      "get": {
-        "tags": ["helpCenter"],
-        "description": "Generate Services - HELPCENTER - GET",
-        "produces": ["application/json"]
-      },
+    "/boAdmin/updateAdmin": {
       "post": {
-        "tags": ["helpCenter"],
-        "description": "Generate Services - HELPCENTER - POST",
+        "tags": ["boAdmin"],
+        "description": "Generate Services - BOADMIN - POST",
         "produces": ["application/json"]
       }
     },
-    "/helpCenter/:id": {
-      "get": {
-        "tags": ["helpCenter"],
-        "description": "Generate Services - HELPCENTER - GET",
-        "produces": ["application/json"]
-      },
-      "put": {
-        "tags": ["helpCenter"],
-        "description": "Generate Services - HELPCENTER - PUT",
-        "produces": ["application/json"]
-      },
-      "delete": {
-        "tags": ["helpCenter"],
-        "description": "Generate Services - HELPCENTER - DELETE",
-        "produces": ["application/json"]
-      }
-    },
-    "/helpCenter/filter/:name": {
-      "get": {
-        "tags": ["helpCenter"],
-        "description": "Generate Services - HELPCENTER - GET",
-        "produces": ["application/json"]
-      }
-    },
-    "/helpCenter/all/filter": {
+    "/boAdmin/getAdminInfoById": {
       "post": {
-        "tags": ["helpCenter"],
-        "description": "Generate Services - HELPCENTER - POST",
+        "tags": ["boAdmin"],
+        "description": "Generate Services - BOADMIN - POST",
         "produces": ["application/json"]
       }
     },
-    "/helpCenter/status/:id": {
-      "put": {
-        "tags": ["helpCenter"],
-        "description": "Generate Services - HELPCENTER - PUT",
-        "produces": ["application/json"]
-      }
-    },
-    "/systemOfficeItems/getAllSystemOfficeItems": {
+    "/boAdmin/boListUsers": {
       "post": {
-        "tags": ["systemOfficeItems"],
-        "description": "Generate Services - SYSTEMOFFICEITEMS - POST",
+        "tags": ["boAdmin"],
+        "description": "Generate Services - BOADMIN - POST",
         "produces": ["application/json"]
       }
     },
-    "/dashboard/all/filter": {
+    "/boAdmin/getBroadReportAboutUser": {
       "post": {
-        "tags": ["dashboard"],
-        "description": "Generate Services - DASHBOARD - POST",
+        "tags": ["boAdmin"],
+        "description": "Generate Services - BOADMIN - POST",
         "produces": ["application/json"]
       }
     },
-    "/dashboard/all/more": {
+    "/boAdmin/updateUserState": {
       "post": {
-        "tags": ["dashboard"],
-        "description": "Generate Services - DASHBOARD - POST",
+        "tags": ["boAdmin"],
+        "description": "Generate Services - BOADMIN - POST",
         "produces": ["application/json"]
       }
     },
-    "/dashboard/getOfficesPercent": {
+    "/checkIn/makeCheckIn": {
       "post": {
-        "tags": ["dashboard"],
-        "description": "Generate Services - DASHBOARD - POST",
+        "tags": ["checkIn"],
+        "description": "Generate Services - CHECKIN - POST",
         "produces": ["application/json"]
       }
     },
-    "/dashboard/all/less": {
+    "/checkOut/makeCheckOut": {
       "post": {
-        "tags": ["dashboard"],
-        "description": "Generate Services - DASHBOARD - POST",
+        "tags": ["checkOut"],
+        "description": "Generate Services - CHECKOUT - POST",
         "produces": ["application/json"]
       }
     },
-    "/dashboard/getTopOfficesMoreReserved": {
-      "post": {
-        "tags": ["dashboard"],
-        "description": "Generate Services - DASHBOARD - POST",
-        "produces": ["application/json"]
-      }
-    },
-    "/dashboard/all/city": {
-      "post": {
-        "tags": ["dashboard"],
-        "description": "Generate Services - DASHBOARD - POST",
-        "produces": ["application/json"]
-      }
-    },
-    "/dashboard/all/users": {
-      "post": {
-        "tags": ["dashboard"],
-        "description": "Generate Services - DASHBOARD - POST",
-        "produces": ["application/json"]
-      }
-    },
-    "/dashboard/getUsersCancelReservations": {
-      "post": {
-        "tags": ["dashboard"],
-        "description": "Generate Services - DASHBOARD - POST",
-        "produces": ["application/json"]
-      }
-    },
-    "/dashboard/all/office": {
-      "post": {
-        "tags": ["dashboard"],
-        "description": "Generate Services - DASHBOARD - POST",
-        "produces": ["application/json"]
-      }
-    },
-    "/dashboard/totalReservations": {
-      "post": {
-        "tags": ["dashboard"],
-        "description": "Generate Services - DASHBOARD - POST",
-        "produces": ["application/json"]
-      }
-    },
-    "/dashboard/reservationsByCity": {
-      "post": {
-        "tags": ["dashboard"],
-        "description": "Generate Services - DASHBOARD - POST",
-        "produces": ["application/json"]
-      }
-    },
-    "/dashboard/reservationsByOfficeType": {
-      "post": {
-        "tags": ["dashboard"],
-        "description": "Generate Services - DASHBOARD - POST",
-        "produces": ["application/json"]
-      }
-    },
-    "/floorBuilding/page/:limit/:offset": {
-      "get": {
-        "tags": ["floorBuilding"],
-        "description": "Generate Services - FLOORBUILDING - GET",
-        "produces": ["application/json"]
-      }
-    },
-    "/floorBuilding": {
-      "get": {
-        "tags": ["floorBuilding"],
-        "description": "Generate Services - FLOORBUILDING - GET",
-        "produces": ["application/json"]
-      },
-      "post": {
-        "tags": ["floorBuilding"],
-        "description": "Generate Services - FLOORBUILDING - POST",
-        "produces": ["application/json"]
-      }
-    },
-    "/floorBuilding/:id": {
-      "get": {
-        "tags": ["floorBuilding"],
-        "description": "Generate Services - FLOORBUILDING - GET",
-        "produces": ["application/json"]
-      },
-      "put": {
-        "tags": ["floorBuilding"],
-        "description": "Generate Services - FLOORBUILDING - PUT",
-        "produces": ["application/json"]
-      },
-      "delete": {
-        "tags": ["floorBuilding"],
-        "description": "Generate Services - FLOORBUILDING - DELETE",
-        "produces": ["application/json"]
-      }
-    },
-    "/floorBuilding/filter/:name": {
-      "get": {
-        "tags": ["floorBuilding"],
-        "description": "Generate Services - FLOORBUILDING - GET",
-        "produces": ["application/json"]
-      }
-    },
-    "/floorBuilding/all/filter": {
-      "post": {
-        "tags": ["floorBuilding"],
-        "description": "Generate Services - FLOORBUILDING - POST",
-        "produces": ["application/json"]
-      }
-    },
-    "/floorBuilding/all/building/:buildingId": {
-      "get": {
-        "tags": ["floorBuilding"],
-        "description": "Generate Services - FLOORBUILDING - GET",
-        "produces": ["application/json"]
-      }
-    },
-    "/floorBuilding/status/:id": {
-      "put": {
-        "tags": ["floorBuilding"],
-        "description": "Generate Services - FLOORBUILDING - PUT",
-        "produces": ["application/json"]
-      }
-    },
-    "/city": {
-      "post": {
-        "tags": ["city"],
-        "description": "Generate Services - CITY - POST",
-        "produces": ["application/json"]
-      }
-    },
-    "/city/listCities": {
-      "post": {
-        "tags": ["city"],
-        "description": "Generate Services - CITY - POST",
-        "produces": ["application/json"]
-      }
-    },
-    "/city/setCityStatus": {
-      "post": {
-        "tags": ["city"],
-        "description": "Generate Services - CITY - POST",
-        "produces": ["application/json"]
-      }
-    },
-    "/city/createCity": {
-      "post": {
-        "tags": ["city"],
-        "description": "Generate Services - CITY - POST",
-        "produces": ["application/json"]
-      }
-    },
-    "/city/updateCity": {
-      "post": {
-        "tags": ["city"],
-        "description": "Generate Services - CITY - POST",
-        "produces": ["application/json"]
-      }
-    },
-    "/city/cityById": {
-      "post": {
-        "tags": ["city"],
-        "description": "Generate Services - CITY - POST",
-        "produces": ["application/json"]
-      }
-    },
-    "/building/listBuildings": {
-      "post": {
-        "tags": ["building"],
-        "description": "Generate Services - BUILDING - POST",
-        "produces": ["application/json"]
-      }
-    },
-    "/building/setBuildingStatus": {
-      "post": {
-        "tags": ["building"],
-        "description": "Generate Services - BUILDING - POST",
-        "produces": ["application/json"]
-      }
-    },
-    "/building/createBuilding": {
-      "post": {
-        "tags": ["building"],
-        "description": "Generate Services - BUILDING - POST",
-        "produces": ["application/json"]
-      }
-    },
-    "/building/updateBuilding": {
-      "post": {
-        "tags": ["building"],
-        "description": "Generate Services - BUILDING - POST",
-        "produces": ["application/json"]
-      }
-    },
-    "/building/buildingById": {
-      "post": {
-        "tags": ["building"],
-        "description": "Generate Services - BUILDING - POST",
-        "produces": ["application/json"]
-      }
-    },
-    "/user/changeUserState": {
+    "/user/listUsers": {
       "post": {
         "tags": ["user"],
         "description": "Generate Services - USER - POST",
         "produces": ["application/json"]
       }
     },
-    "/user/getUserInfoById": {
+    "/user/editUser": {
       "post": {
         "tags": ["user"],
         "description": "Generate Services - USER - POST",
-        "produces": ["application/json"]
-      }
-    },
-    "/notificationReservation/listNotificationReservation": {
-      "post": {
-        "tags": ["notificationReservation"],
-        "description": "Generate Services - NOTIFICATIONRESERVATION - POST",
-        "produces": ["application/json"]
-      }
-    },
-    "/position/getAllPositions": {
-      "post": {
-        "tags": ["position"],
-        "description": "Generate Services - POSITION - POST",
-        "produces": ["application/json"]
-      }
-    },
-    "/position/getPositions": {
-      "post": {
-        "tags": ["position"],
-        "description": "Generate Services - POSITION - POST",
-        "produces": ["application/json"]
-      }
-    },
-    "/position/createPosition": {
-      "post": {
-        "tags": ["position"],
-        "description": "Generate Services - POSITION - POST",
-        "produces": ["application/json"]
-      }
-    },
-    "/position/updatePosition": {
-      "post": {
-        "tags": ["position"],
-        "description": "Generate Services - POSITION - POST",
-        "produces": ["application/json"]
-      }
-    },
-    "/position/getPositionById": {
-      "post": {
-        "tags": ["position"],
-        "description": "Generate Services - POSITION - POST",
-        "produces": ["application/json"]
-      }
-    },
-    "/systemTimeAvailable/updateTimeAvailable": {
-      "post": {
-        "tags": ["systemTimeAvailable"],
-        "description": "Generate Services - SYSTEMTIMEAVAILABLE - POST",
-        "produces": ["application/json"]
-      }
-    },
-    "/systemTimeAvailable/getTimeById": {
-      "post": {
-        "tags": ["systemTimeAvailable"],
-        "description": "Generate Services - SYSTEMTIMEAVAILABLE - POST",
-        "produces": ["application/json"]
-      }
-    },
-    "/systemPercentage/getAllPercentages": {
-      "post": {
-        "tags": ["systemPercentage"],
-        "description": "Generate Services - SYSTEMPERCENTAGE - POST",
-        "produces": ["application/json"]
-      }
-    },
-    "/systemItemIcon/getAllSystemIcons": {
-      "post": {
-        "tags": ["systemItemIcon"],
-        "description": "Generate Services - SYSTEMITEMICON - POST",
         "produces": ["application/json"]
       }
     }
@@ -892,7 +336,7 @@
     "description": "REST API for client",
     "termsOfService": "http://swagger.io/terms/",
     "contact": {
-      "email": null
+      "email": "ingeniero.miguelvargas@gmail.com"
     }
   },
   "host": "localhost:5000/",
@@ -905,17 +349,5 @@
   ],
   "schemes": ["http", "https"],
   "consumes": ["application/json"],
-  "produces": ["application/json"],
-  "securityDefinitions": {
-    "x-bc-access-token": {
-      "name": "x-bc-access-token",
-      "in": "header",
-      "type": "apiKey"
-    },
-    "x-bc-auth-token": {
-      "name": "x-bc-auth-token",
-      "in": "header",
-      "type": "apiKey"
-    }
-  }
+  "produces": ["application/json"]
 }

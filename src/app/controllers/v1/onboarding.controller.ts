@@ -155,6 +155,9 @@ export class OnboardingController {
     nextOrError: NextFunction
   ) => {
     const data: IUser.SignInDTO = request.body;
+
+    console.log('daaaatax', data);
+
     const content = await this.onboardingService
       .login(data)
       // eslint-disable-next-line shopify/prefer-early-return

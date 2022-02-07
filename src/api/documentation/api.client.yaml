@@ -6,7 +6,7 @@ info:
   description: REST API for client
   termsOfService: http://swagger.io/terms/
   contact:
-    email:
+    email: ingeniero.miguelvargas@gmail.com
   license:
     name: Apache 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html

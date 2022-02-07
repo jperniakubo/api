@@ -5,1397 +5,323 @@
       "get": {
         "tags": ["kg"],
         "description": "Generate Services - KG - GET",
-        "security": [
-          {
-            "x-bc-access-token": []
-          },
-          {
-            "x-bc-auth-token": []
-          }
-        ],
-        "responses": {
-          "404": {
-            "description": "Not Found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "string",
-                  "example": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot GET /v1/kg/generate-access-token</pre>\n</body>\n</html>\n"
-                }
-              },
-              "text/html": {
-                "schema": {
-                  "type": "string",
-                  "example": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot GET /v1/kg/generate-access-token</pre>\n</body>\n</html>\n"
-                }
-              }
-            }
-          }
-        }
+        "responses": {"default": {"description": "Default response"}}
       }
     },
     "/onboarding/signup": {
       "post": {
         "tags": ["onboarding"],
         "description": "Generate Services - ONBOARDING - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
+        "responses": {"default": {"description": "Default response"}}
       }
     },
     "/onboarding/login": {
       "post": {
         "tags": ["onboarding"],
         "description": "Generate Services - ONBOARDING - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
+        "responses": {"default": {"description": "Default response"}}
       }
     },
     "/onboarding/confirm-email/:uid": {
       "get": {
         "tags": ["onboarding"],
         "description": "Generate Services - ONBOARDING - GET",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
+        "responses": {"default": {"description": "Default response"}}
       }
     },
     "/onboarding/recovery-password": {
       "post": {
         "tags": ["onboarding"],
         "description": "Generate Services - ONBOARDING - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
+        "responses": {"default": {"description": "Default response"}}
       }
     },
     "/onboarding/check-code": {
       "post": {
         "tags": ["onboarding"],
         "description": "Generate Services - ONBOARDING - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
+        "responses": {"default": {"description": "Default response"}}
       }
     },
     "/onboarding/change-password": {
       "post": {
         "tags": ["onboarding"],
         "description": "Generate Services - ONBOARDING - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
+        "responses": {"default": {"description": "Default response"}}
       }
     },
     "/onboarding/profile": {
       "get": {
         "tags": ["onboarding"],
         "description": "Generate Services - ONBOARDING - GET",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
+        "responses": {"default": {"description": "Default response"}}
       }
     },
     "/cat": {
       "get": {
         "tags": ["cat"],
         "description": "Generate Services - CAT - GET",
-        "responses": {
-          "404": {
-            "description": "Not Found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "string",
-                  "example": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot GET /cat</pre>\n</body>\n</html>\n"
-                }
-              },
-              "text/html": {
-                "schema": {
-                  "type": "string",
-                  "example": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot GET /cat</pre>\n</body>\n</html>\n"
-                }
-              }
-            }
-          }
-        }
+        "responses": {"default": {"description": "Default response"}}
       },
       "post": {
         "tags": ["cat"],
         "description": "Generate Services - CAT - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
+        "responses": {"default": {"description": "Default response"}}
       }
     },
     "/cat/:filter/:limit/:offset": {
       "get": {
         "tags": ["cat"],
         "description": "Generate Services - CAT - GET",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
+        "responses": {"default": {"description": "Default response"}}
       }
     },
     "/cat/:id": {
       "get": {
         "tags": ["cat"],
         "description": "Generate Services - CAT - GET",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
+        "responses": {"default": {"description": "Default response"}}
       },
       "put": {
         "tags": ["cat"],
         "description": "Generate Services - CAT - PUT",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
+        "responses": {"default": {"description": "Default response"}}
       },
       "delete": {
         "tags": ["cat"],
         "description": "Generate Services - CAT - DELETE",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
+        "responses": {"default": {"description": "Default response"}}
       }
     },
     "/cat/deactivate/:id": {
       "put": {
         "tags": ["cat"],
         "description": "Generate Services - CAT - PUT",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/boAdmin/loginAdmin": {
-      "post": {
-        "tags": ["boAdmin"],
-        "description": "Generate Services - BOADMIN - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/boAdmin/listAdmins": {
-      "post": {
-        "tags": ["boAdmin"],
-        "description": "Generate Services - BOADMIN - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/boAdmin/searchAdmins": {
-      "post": {
-        "tags": ["boAdmin"],
-        "description": "Generate Services - BOADMIN - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/boAdmin/createAdmin": {
-      "post": {
-        "tags": ["boAdmin"],
-        "description": "Generate Services - BOADMIN - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/boAdmin/changeAdminState": {
-      "post": {
-        "tags": ["boAdmin"],
-        "description": "Generate Services - BOADMIN - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/boAdmin/updateAdmin": {
-      "post": {
-        "tags": ["boAdmin"],
-        "description": "Generate Services - BOADMIN - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/boAdmin/getAdminInfoById": {
-      "post": {
-        "tags": ["boAdmin"],
-        "description": "Generate Services - BOADMIN - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/boAdmin/getAllRolesAdmin": {
-      "post": {
-        "tags": ["boAdmin"],
-        "description": "Generate Services - BOADMIN - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/boAdmin/boListUsers": {
-      "post": {
-        "tags": ["boAdmin"],
-        "description": "Generate Services - BOADMIN - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/boAdmin/getBroadReportAboutUser": {
-      "post": {
-        "tags": ["boAdmin"],
-        "description": "Generate Services - BOADMIN - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/boAdmin/updateUserState": {
-      "post": {
-        "tags": ["boAdmin"],
-        "description": "Generate Services - BOADMIN - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/office/page/:limit/:offset": {
-      "get": {
-        "tags": ["office"],
-        "description": "Generate Services - OFFICE - GET",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/office/officeArrivalsDirection/:officeId/:limit/:offset": {
-      "get": {
-        "tags": ["office"],
-        "description": "Generate Services - OFFICE - GET",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/office": {
-      "get": {
-        "tags": ["office"],
-        "description": "Generate Services - OFFICE - GET",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      },
-      "post": {
-        "tags": ["office"],
-        "description": "Generate Services - OFFICE - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/office/:id": {
-      "get": {
-        "tags": ["office"],
-        "description": "Generate Services - OFFICE - GET",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      },
-      "put": {
-        "tags": ["office"],
-        "description": "Generate Services - OFFICE - PUT",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      },
-      "delete": {
-        "tags": ["office"],
-        "description": "Generate Services - OFFICE - DELETE",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/office/filter/:name": {
-      "get": {
-        "tags": ["office"],
-        "description": "Generate Services - OFFICE - GET",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/office/all/filter": {
-      "post": {
-        "tags": ["office"],
-        "description": "Generate Services - OFFICE - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/office/getListOffice": {
-      "post": {
-        "tags": ["office"],
-        "description": "Generate Services - OFFICE - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/office/status/:id": {
-      "put": {
-        "tags": ["office"],
-        "description": "Generate Services - OFFICE - PUT",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/office/status/arrival/:id": {
-      "put": {
-        "tags": ["office"],
-        "description": "Generate Services - OFFICE - PUT",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/office/status/item/:id": {
-      "put": {
-        "tags": ["office"],
-        "description": "Generate Services - OFFICE - PUT",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/office/getAllOffice": {
-      "get": {
-        "tags": ["office"],
-        "description": "Generate Services - OFFICE - GET",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/office/changeStatus/:id": {
-      "put": {
-        "tags": ["office"],
-        "description": "Generate Services - OFFICE - PUT",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/office/createOffice": {
-      "post": {
-        "tags": ["office"],
-        "description": "Generate Services - OFFICE - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/office/getListOfOfficeByFloor": {
-      "post": {
-        "tags": ["office"],
-        "description": "Generate Services - OFFICE - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/office/getOfficeInfo": {
-      "post": {
-        "tags": ["office"],
-        "description": "Generate Services - OFFICE - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/office/getFavoritesOfficesOfUser": {
-      "post": {
-        "tags": ["office"],
-        "description": "Generate Services - OFFICE - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/office/addOfficeToFavorites": {
-      "post": {
-        "tags": ["office"],
-        "description": "Generate Services - OFFICE - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/office/reservationOffice": {
-      "post": {
-        "tags": ["office"],
-        "description": "Generate Services - OFFICE - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/office/listUserReservations": {
-      "post": {
-        "tags": ["office"],
-        "description": "Generate Services - OFFICE - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/office/getReservationInfo": {
-      "post": {
-        "tags": ["office"],
-        "description": "Generate Services - OFFICE - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/office/verifyQrCode": {
-      "post": {
-        "tags": ["office"],
-        "description": "Generate Services - OFFICE - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/office/cancelReservation": {
-      "post": {
-        "tags": ["office"],
-        "description": "Generate Services - OFFICE - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/office/updateReservation": {
-      "post": {
-        "tags": ["office"],
-        "description": "Generate Services - OFFICE - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/office/checkQrOffice": {
-      "post": {
-        "tags": ["office"],
-        "description": "Generate Services - OFFICE - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/reservationOffice/page/:limit/:offset": {
-      "get": {
-        "tags": ["reservationOffice"],
-        "description": "Generate Services - RESERVATIONOFFICE - GET",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/reservationOffice": {
-      "get": {
-        "tags": ["reservationOffice"],
-        "description": "Generate Services - RESERVATIONOFFICE - GET",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      },
-      "post": {
-        "tags": ["reservationOffice"],
-        "description": "Generate Services - RESERVATIONOFFICE - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/reservationOffice/:id": {
-      "get": {
-        "tags": ["reservationOffice"],
-        "description": "Generate Services - RESERVATIONOFFICE - GET",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      },
-      "put": {
-        "tags": ["reservationOffice"],
-        "description": "Generate Services - RESERVATIONOFFICE - PUT",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      },
-      "delete": {
-        "tags": ["reservationOffice"],
-        "description": "Generate Services - RESERVATIONOFFICE - DELETE",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/reservationOffice/all/filter": {
-      "post": {
-        "tags": ["reservationOffice"],
-        "description": "Generate Services - RESERVATIONOFFICE - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/reservationOffice/getAllByDateAndOffice": {
-      "post": {
-        "tags": ["reservationOffice"],
-        "description": "Generate Services - RESERVATIONOFFICE - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/reservationOffice/filter/:name": {
-      "get": {
-        "tags": ["reservationOffice"],
-        "description": "Generate Services - RESERVATIONOFFICE - GET",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/reservationOffice/status/:id": {
-      "put": {
-        "tags": ["reservationOffice"],
-        "description": "Generate Services - RESERVATIONOFFICE - PUT",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/officeType/page/:limit/:offset": {
-      "get": {
-        "tags": ["officeType"],
-        "description": "Generate Services - OFFICETYPE - GET",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/officeType": {
-      "get": {
-        "tags": ["officeType"],
-        "description": "Generate Services - OFFICETYPE - GET",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      },
-      "post": {
-        "tags": ["officeType"],
-        "description": "Generate Services - OFFICETYPE - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/officeType/:id": {
-      "get": {
-        "tags": ["officeType"],
-        "description": "Generate Services - OFFICETYPE - GET",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      },
-      "put": {
-        "tags": ["officeType"],
-        "description": "Generate Services - OFFICETYPE - PUT",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      },
-      "delete": {
-        "tags": ["officeType"],
-        "description": "Generate Services - OFFICETYPE - DELETE",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/officeType/filter/:name": {
-      "get": {
-        "tags": ["officeType"],
-        "description": "Generate Services - OFFICETYPE - GET",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/officeType/all/filter": {
-      "post": {
-        "tags": ["officeType"],
-        "description": "Generate Services - OFFICETYPE - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/officeType/status/:id": {
-      "put": {
-        "tags": ["officeType"],
-        "description": "Generate Services - OFFICETYPE - PUT",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/helpCenter/page/:limit/:offset": {
-      "get": {
-        "tags": ["helpCenter"],
-        "description": "Generate Services - HELPCENTER - GET",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/helpCenter": {
-      "get": {
-        "tags": ["helpCenter"],
-        "description": "Generate Services - HELPCENTER - GET",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      },
-      "post": {
-        "tags": ["helpCenter"],
-        "description": "Generate Services - HELPCENTER - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/helpCenter/:id": {
-      "get": {
-        "tags": ["helpCenter"],
-        "description": "Generate Services - HELPCENTER - GET",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      },
-      "put": {
-        "tags": ["helpCenter"],
-        "description": "Generate Services - HELPCENTER - PUT",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      },
-      "delete": {
-        "tags": ["helpCenter"],
-        "description": "Generate Services - HELPCENTER - DELETE",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/helpCenter/filter/:name": {
-      "get": {
-        "tags": ["helpCenter"],
-        "description": "Generate Services - HELPCENTER - GET",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/helpCenter/all/filter": {
-      "post": {
-        "tags": ["helpCenter"],
-        "description": "Generate Services - HELPCENTER - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/helpCenter/status/:id": {
-      "put": {
-        "tags": ["helpCenter"],
-        "description": "Generate Services - HELPCENTER - PUT",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/systemOfficeItems/getAllSystemOfficeItems": {
-      "post": {
-        "tags": ["systemOfficeItems"],
-        "description": "Generate Services - SYSTEMOFFICEITEMS - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/dashboard/all/filter": {
-      "post": {
-        "tags": ["dashboard"],
-        "description": "Generate Services - DASHBOARD - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/dashboard/all/more": {
-      "post": {
-        "tags": ["dashboard"],
-        "description": "Generate Services - DASHBOARD - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/dashboard/getOfficesPercent": {
-      "post": {
-        "tags": ["dashboard"],
-        "description": "Generate Services - DASHBOARD - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/dashboard/all/less": {
-      "post": {
-        "tags": ["dashboard"],
-        "description": "Generate Services - DASHBOARD - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/dashboard/getTopOfficesMoreReserved": {
-      "post": {
-        "tags": ["dashboard"],
-        "description": "Generate Services - DASHBOARD - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/dashboard/all/city": {
-      "post": {
-        "tags": ["dashboard"],
-        "description": "Generate Services - DASHBOARD - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/dashboard/all/users": {
-      "post": {
-        "tags": ["dashboard"],
-        "description": "Generate Services - DASHBOARD - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/dashboard/getUsersCancelReservations": {
-      "post": {
-        "tags": ["dashboard"],
-        "description": "Generate Services - DASHBOARD - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/dashboard/all/office": {
-      "post": {
-        "tags": ["dashboard"],
-        "description": "Generate Services - DASHBOARD - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/dashboard/totalReservations": {
-      "post": {
-        "tags": ["dashboard"],
-        "description": "Generate Services - DASHBOARD - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/dashboard/reservationsByCity": {
-      "post": {
-        "tags": ["dashboard"],
-        "description": "Generate Services - DASHBOARD - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/dashboard/reservationsByOfficeType": {
-      "post": {
-        "tags": ["dashboard"],
-        "description": "Generate Services - DASHBOARD - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/floorBuilding/page/:limit/:offset": {
-      "get": {
-        "tags": ["floorBuilding"],
-        "description": "Generate Services - FLOORBUILDING - GET",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/floorBuilding": {
-      "get": {
-        "tags": ["floorBuilding"],
-        "description": "Generate Services - FLOORBUILDING - GET",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      },
-      "post": {
-        "tags": ["floorBuilding"],
-        "description": "Generate Services - FLOORBUILDING - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/floorBuilding/:id": {
-      "get": {
-        "tags": ["floorBuilding"],
-        "description": "Generate Services - FLOORBUILDING - GET",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      },
-      "put": {
-        "tags": ["floorBuilding"],
-        "description": "Generate Services - FLOORBUILDING - PUT",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      },
-      "delete": {
-        "tags": ["floorBuilding"],
-        "description": "Generate Services - FLOORBUILDING - DELETE",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/floorBuilding/filter/:name": {
-      "get": {
-        "tags": ["floorBuilding"],
-        "description": "Generate Services - FLOORBUILDING - GET",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/floorBuilding/all/filter": {
-      "post": {
-        "tags": ["floorBuilding"],
-        "description": "Generate Services - FLOORBUILDING - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/floorBuilding/all/building/:buildingId": {
-      "get": {
-        "tags": ["floorBuilding"],
-        "description": "Generate Services - FLOORBUILDING - GET",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/floorBuilding/status/:id": {
-      "put": {
-        "tags": ["floorBuilding"],
-        "description": "Generate Services - FLOORBUILDING - PUT",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
+        "responses": {"default": {"description": "Default response"}}
       }
     },
     "/city": {
       "post": {
         "tags": ["city"],
         "description": "Generate Services - CITY - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
+        "responses": {"default": {"description": "Default response"}}
       }
     },
-    "/city/listCities": {
-      "post": {
-        "tags": ["city"],
-        "description": "Generate Services - CITY - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/city/setCityStatus": {
-      "post": {
-        "tags": ["city"],
-        "description": "Generate Services - CITY - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/city/createCity": {
-      "post": {
-        "tags": ["city"],
-        "description": "Generate Services - CITY - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/city/updateCity": {
-      "post": {
-        "tags": ["city"],
-        "description": "Generate Services - CITY - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/city/cityById": {
-      "post": {
-        "tags": ["city"],
-        "description": "Generate Services - CITY - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/building/listBuildings": {
+    "/building/getBuildingsByCity": {
       "post": {
         "tags": ["building"],
         "description": "Generate Services - BUILDING - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
+        "responses": {"default": {"description": "Default response"}}
       }
     },
-    "/building/setBuildingStatus": {
+    "/building/findBuilding": {
       "post": {
         "tags": ["building"],
         "description": "Generate Services - BUILDING - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
+        "responses": {"default": {"description": "Default response"}}
       }
     },
-    "/building/createBuilding": {
+    "/building/getFloorsByBuilding": {
       "post": {
         "tags": ["building"],
         "description": "Generate Services - BUILDING - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
+        "responses": {"default": {"description": "Default response"}}
       }
     },
-    "/building/updateBuilding": {
+    "/officeType/getAll": {
       "post": {
-        "tags": ["building"],
-        "description": "Generate Services - BUILDING - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
+        "tags": ["officeType"],
+        "description": "Generate Services - OFFICETYPE - POST",
+        "responses": {"default": {"description": "Default response"}}
       }
     },
-    "/building/buildingById": {
+    "/helpCenter/getAllQuestions": {
       "post": {
-        "tags": ["building"],
-        "description": "Generate Services - BUILDING - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
+        "tags": ["helpCenter"],
+        "description": "Generate Services - HELPCENTER - POST",
+        "responses": {"default": {"description": "Default response"}}
       }
     },
-    "/user/changeUserState": {
+    "/helpCenter/generateSupportTicket": {
+      "post": {
+        "tags": ["helpCenter"],
+        "description": "Generate Services - HELPCENTER - POST",
+        "responses": {"default": {"description": "Default response"}}
+      }
+    },
+    "/phoneServiceNumber/getAll": {
+      "post": {
+        "tags": ["phoneServiceNumber"],
+        "description": "Generate Services - PHONESERVICENUMBER - POST",
+        "responses": {"default": {"description": "Default response"}}
+      }
+    },
+    "/office/getListOfOfficeByFloor": {
+      "post": {
+        "tags": ["office"],
+        "description": "Generate Services - OFFICE - POST",
+        "responses": {"default": {"description": "Default response"}}
+      }
+    },
+    "/office/getOfficeInfo": {
+      "post": {
+        "tags": ["office"],
+        "description": "Generate Services - OFFICE - POST",
+        "responses": {"default": {"description": "Default response"}}
+      }
+    },
+    "/office/getFavoritesOfficesOfUser": {
+      "post": {
+        "tags": ["office"],
+        "description": "Generate Services - OFFICE - POST",
+        "responses": {"default": {"description": "Default response"}}
+      }
+    },
+    "/office/addOfficeToFavorites": {
+      "post": {
+        "tags": ["office"],
+        "description": "Generate Services - OFFICE - POST",
+        "responses": {"default": {"description": "Default response"}}
+      }
+    },
+    "/office/reservationOffice": {
+      "post": {
+        "tags": ["office"],
+        "description": "Generate Services - OFFICE - POST",
+        "responses": {"default": {"description": "Default response"}}
+      }
+    },
+    "/office/listUserReservations": {
+      "post": {
+        "tags": ["office"],
+        "description": "Generate Services - OFFICE - POST",
+        "responses": {"default": {"description": "Default response"}}
+      }
+    },
+    "/office/getReservationInfo": {
+      "post": {
+        "tags": ["office"],
+        "description": "Generate Services - OFFICE - POST",
+        "responses": {"default": {"description": "Default response"}}
+      }
+    },
+    "/office/cancelReservation": {
+      "post": {
+        "tags": ["office"],
+        "description": "Generate Services - OFFICE - POST",
+        "responses": {"default": {"description": "Default response"}}
+      }
+    },
+    "/office/updateReservation": {
+      "post": {
+        "tags": ["office"],
+        "description": "Generate Services - OFFICE - POST",
+        "responses": {"default": {"description": "Default response"}}
+      }
+    },
+    "/office/checkQrOffice": {
+      "post": {
+        "tags": ["office"],
+        "description": "Generate Services - OFFICE - POST",
+        "responses": {"default": {"description": "Default response"}}
+      }
+    },
+    "/boAdmin/loginAdmin": {
+      "post": {
+        "tags": ["boAdmin"],
+        "description": "Generate Services - BOADMIN - POST",
+        "responses": {"default": {"description": "Default response"}}
+      }
+    },
+    "/boAdmin/listAdmins": {
+      "post": {
+        "tags": ["boAdmin"],
+        "description": "Generate Services - BOADMIN - POST",
+        "responses": {"default": {"description": "Default response"}}
+      }
+    },
+    "/boAdmin/searchAdmins": {
+      "post": {
+        "tags": ["boAdmin"],
+        "description": "Generate Services - BOADMIN - POST",
+        "responses": {"default": {"description": "Default response"}}
+      }
+    },
+    "/boAdmin/createAdmin": {
+      "post": {
+        "tags": ["boAdmin"],
+        "description": "Generate Services - BOADMIN - POST",
+        "responses": {"default": {"description": "Default response"}}
+      }
+    },
+    "/boAdmin/changeAdminState": {
+      "post": {
+        "tags": ["boAdmin"],
+        "description": "Generate Services - BOADMIN - POST",
+        "responses": {"default": {"description": "Default response"}}
+      }
+    },
+    "/boAdmin/updateAdmin": {
+      "post": {
+        "tags": ["boAdmin"],
+        "description": "Generate Services - BOADMIN - POST",
+        "responses": {"default": {"description": "Default response"}}
+      }
+    },
+    "/boAdmin/getAdminInfoById": {
+      "post": {
+        "tags": ["boAdmin"],
+        "description": "Generate Services - BOADMIN - POST",
+        "responses": {"default": {"description": "Default response"}}
+      }
+    },
+    "/boAdmin/boListUsers": {
+      "post": {
+        "tags": ["boAdmin"],
+        "description": "Generate Services - BOADMIN - POST",
+        "responses": {"default": {"description": "Default response"}}
+      }
+    },
+    "/boAdmin/getBroadReportAboutUser": {
+      "post": {
+        "tags": ["boAdmin"],
+        "description": "Generate Services - BOADMIN - POST",
+        "responses": {"default": {"description": "Default response"}}
+      }
+    },
+    "/boAdmin/updateUserState": {
+      "post": {
+        "tags": ["boAdmin"],
+        "description": "Generate Services - BOADMIN - POST",
+        "responses": {"default": {"description": "Default response"}}
+      }
+    },
+    "/checkIn/makeCheckIn": {
+      "post": {
+        "tags": ["checkIn"],
+        "description": "Generate Services - CHECKIN - POST",
+        "responses": {"default": {"description": "Default response"}}
+      }
+    },
+    "/checkOut/makeCheckOut": {
+      "post": {
+        "tags": ["checkOut"],
+        "description": "Generate Services - CHECKOUT - POST",
+        "responses": {"default": {"description": "Default response"}}
+      }
+    },
+    "/user/listUsers": {
       "post": {
         "tags": ["user"],
         "description": "Generate Services - USER - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
+        "responses": {"default": {"description": "Default response"}}
       }
     },
-    "/user/getUserInfoById": {
+    "/user/editUser": {
       "post": {
         "tags": ["user"],
         "description": "Generate Services - USER - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/notificationReservation/listNotificationReservation": {
-      "post": {
-        "tags": ["notificationReservation"],
-        "description": "Generate Services - NOTIFICATIONRESERVATION - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/position/getAllPositions": {
-      "post": {
-        "tags": ["position"],
-        "description": "Generate Services - POSITION - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/position/getPositions": {
-      "post": {
-        "tags": ["position"],
-        "description": "Generate Services - POSITION - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/position/createPosition": {
-      "post": {
-        "tags": ["position"],
-        "description": "Generate Services - POSITION - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/position/updatePosition": {
-      "post": {
-        "tags": ["position"],
-        "description": "Generate Services - POSITION - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/position/getPositionById": {
-      "post": {
-        "tags": ["position"],
-        "description": "Generate Services - POSITION - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/systemTimeAvailable/updateTimeAvailable": {
-      "post": {
-        "tags": ["systemTimeAvailable"],
-        "description": "Generate Services - SYSTEMTIMEAVAILABLE - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/systemTimeAvailable/getTimeById": {
-      "post": {
-        "tags": ["systemTimeAvailable"],
-        "description": "Generate Services - SYSTEMTIMEAVAILABLE - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/systemPercentage/getAllPercentages": {
-      "post": {
-        "tags": ["systemPercentage"],
-        "description": "Generate Services - SYSTEMPERCENTAGE - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
-      }
-    },
-    "/systemItemIcon/getAllSystemIcons": {
-      "post": {
-        "tags": ["systemItemIcon"],
-        "description": "Generate Services - SYSTEMITEMICON - POST",
-        "responses": {
-          "default": {
-            "description": "Default response"
-          }
-        }
+        "responses": {"default": {"description": "Default response"}}
       }
     }
   },
@@ -1408,34 +334,11 @@
     },
     "description": "REST API for client",
     "termsOfService": "http://swagger.io/terms/",
-    "contact": {}
+    "contact": {"email": "ingeniero.miguelvargas@gmail.com"}
   },
-  "tags": [
-    {
-      "name": "Services",
-      "description": "User Services"
-    }
-  ],
+  "tags": [{"name": "Services", "description": "User Services"}],
   "servers": [
-    {
-      "url": "http://localhost:5000/api/v1"
-    },
-    {
-      "url": "https://localhost:5000/api/v1"
-    }
-  ],
-  "components": {
-    "securitySchemes": {
-      "x-bc-access-token": {
-        "name": "x-bc-access-token",
-        "in": "header",
-        "type": "apiKey"
-      },
-      "x-bc-auth-token": {
-        "name": "x-bc-auth-token",
-        "in": "header",
-        "type": "apiKey"
-      }
-    }
-  }
+    {"url": "http://localhost:5000/api/v1"},
+    {"url": "https://localhost:5000/api/v1"}
+  ]
 }
