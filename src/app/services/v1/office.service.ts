@@ -154,16 +154,16 @@ export class OfficeService {
 
     /// Este codigo me falla en desarrollo falta validar que este funcionando en production por diferencias de tablas de base de datos
 
-    // const checkPercentLimit = await this.officeRepository.verifyPercentageLimit(
-    //   request.date,
-    //   request.officeId
-    // );
-    // if (checkPercentLimit.exceeded) {
-    //   return generalServiceResponse(
-    //     {code: 401, data: {}},
-    //     `El porcentaje de ocupación es superado en el edificio, este solo acepta un ${checkPercentLimit.percentBuilding}%.`
-    //   );
-    // }
+    const checkPercentLimit = await this.officeRepository.verifyPercentageLimit(
+      request.date,
+      request.officeId
+    );
+    if (checkPercentLimit.exceeded) {
+      return generalServiceResponse(
+        {code: 401, data: {}},
+        `El porcentaje de ocupación es superado en el edificio, este solo acepta un ${checkPercentLimit.percentBuilding}%.`
+      );
+    }
 
     console.log('crear reserva');
 
